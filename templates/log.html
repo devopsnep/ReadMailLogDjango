@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail Log </title>
+</head>
+<body>
+<h3>Reading latest 100 lines in mail log</h3>
+{% for log in output %}
+    {{ log }}<br>
+{% endfor %}
+</body>
+</html>
