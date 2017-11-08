@@ -9,21 +9,21 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container-fluid">
-<div class="row">
-<div class="col-sm-12">
-<h3>Reading latest 100 lines in mail log </h3>
-<a href="/maillog" class="btn btn-primary" role="button">Refresh Log</a>
-<a href="/logout" class="btn btn-danger" role="button">Logout</a>
-</div></div></div>
 <hr>
 <div class="container-fluid">
-<div class="row">
-<div class="col-sm-12">
-{% for log in output %}
-    {{ log }}<br>
-{% endfor %}
-</div>
+    <div class="row">
+
+    <div class="col-sm-4">
+{% load crispy_forms_tags %}
+        <strong>Login to proceed</strong>
+<form method="POST" action="" > {% csrf_token %}
+    {{ form|crispy }}
+    <br>
+        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+</form>
+        </div>
+        <div class="col-sm-8">
+        </div>
 </div>
 </div>
 </body>
