@@ -12,7 +12,7 @@ logout,
 
 @login_required(login_url='/login')
 def readLog(request):
-    command = 'tail -n 100 /var/log/mail.log'
+    command = 'tail -n 40 /var/log/maillog'
     output = os.popen(command).readlines()
     return render(request,'log.html',{'output':output})
 
